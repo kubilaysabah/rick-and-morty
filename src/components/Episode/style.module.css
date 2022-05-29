@@ -1,0 +1,19 @@
+.content {
+    @apply h-screen flex justify-center items-center;
+}
+
+.contentContainer {
+    @apply flex flex-col items-center;
+}
+
+.title {
+    @apply text-center text-white text-4xl font-semibold;
+}
+
+.smallTitle {
+    @apply text-sm mt-5 text-gray-300;
+}
+
+.code {
+    @apply text-gray-300;
+}

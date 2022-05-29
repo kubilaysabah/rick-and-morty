@@ -5,7 +5,7 @@ interface Response<T> {
         pages: number;
         prev: string | null;
     };
-    results: T[];
+    results: T;
 }
 
 interface BaseAPI {
@@ -33,6 +33,7 @@ interface ICharacter extends BaseAPI {
         url: string;
     };
     episode: string[];
+    image: string;
 }
 
 interface ILocation extends BaseAPI {

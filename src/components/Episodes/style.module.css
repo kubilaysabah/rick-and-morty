@@ -1,0 +1,39 @@
+.episodeNavigation {
+    @apply py-5 px-3;
+}
+
+.episodeHeader {
+    @apply flex flex-wrap items-center justify-between mb-5;
+}
+
+.episodeHeader small {
+    @apply text-gray-200 text-sm mb-3;
+}
+
+.episodeContainer {
+    @apply flex flex-wrap md:-mx-3;
+}
+
+.item {
+    @apply md:w-1/2 lg:w-1/4 px-3 mb-5;
+}
+
+.card {
+    @apply relative;
+}
+
+.cardContainer {
+    @apply absolute top-1/2 -translate-y-1/2 left-0 z-[1] px-3 lg:w-[70%];
+}
+
+.link {
+    @apply block;
+}
+
+.Image {
+    @apply rounded-lg max-w-full m-auto block;
+}
+
+.title {
+    @apply text-white font-bold lg:text-2xl;
+}

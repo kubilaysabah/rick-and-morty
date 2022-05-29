@@ -1,0 +1,55 @@
+.slider {
+    @apply mt-5;
+}
+
+.item {
+    @apply xl:!w-1/5 px-2;
+}
+
+.link {
+    @apply block relative;
+}
+
+.content {
+    @apply absolute top-1/2 -translate-y-1/2 left-0 z-[2] w-full text-center;
+}
+
+.overlay {
+    @apply bg-black absolute top-0 left-0 w-full h-full z-[1] bg-opacity-50;
+}
+
+.image {
+    @apply rounded-lg;
+}
+
+.title {
+    @apply text-white font-bold text-2xl;
+}
+
+.statusContainer {
+    @apply flex items-center justify-center;
+}
+
+.status {
+    @apply w-2 h-2 rounded-full;
+}
+
+.statusAlive {
+    @apply status bg-green-600;
+}
+
+.statusDead {
+    @apply status bg-red-600;
+}
+
+.statusUnknown {
+    @apply status bg-yellow-600;
+}
+
+.statusText {
+    @apply text-white ml-2;
+}
+
+.location {
+    @apply text-gray-300;
+}

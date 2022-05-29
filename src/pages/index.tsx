@@ -13,22 +13,31 @@ import store from "state";
 // Components
 import { Episodes } from "components";
 
-const Home: NextPage = (props: any): ReactElement => {
-  console.log(props.data);
+type HomeProps = {
+  episodes: Response<IEpisode[]>
+}
 
+const Home: NextPage<HomeProps> = ({
+  episodes
+}: HomeProps): ReactElement<HomeProps> => {
   return (
-    <Episodes />
+    <div className="container">
+      <Episodes {...episodes} />
+    </div>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale = "en" }) => {
-  const response = await store.dispatch(API.endpoints.getAllCharacters.initiate(""));
-  const { data } = response;
+  const response = await store.dispatch(API.endpoints.getAllEpisodes.initiate({
+    count: 20,
+    page: 1
+  }));
+  const { data: episodes } = response;
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      data
+      episodes
     }
   }
 };
