@@ -1,3 +1,6 @@
+// Next
+import { useRouter } from "next/router";
+
 // React
 import type { FC, ReactElement } from "react";
 import { memo, useEffect, useState } from "react";
@@ -17,6 +20,7 @@ const Episode: FC<IEpisode> = ({
   name,
   url
 }: IEpisode): ReactElement<IEpisode> => {
+  const { back } = useRouter();
   const [characterList, setCharacterList] = useState<ICharacter[]>([]);
 
   useEffect(() => {
@@ -40,6 +44,7 @@ const Episode: FC<IEpisode> = ({
           <small className={Style.smallTitle}>{air_date}</small>
         </div>
         <Characters characters={characterList} />
+        <button onClick={back} className={Style.turnBackButton}>Geri Dön</button>
       </div>
     </div>
   );

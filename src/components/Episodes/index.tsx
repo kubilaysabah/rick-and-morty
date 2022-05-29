@@ -1,6 +1,7 @@
 // Next
 import Link from "next/link";
 
+
 // React
 import type { FC, ReactElement } from "react";
 import { memo, useState, useEffect } from "react";
