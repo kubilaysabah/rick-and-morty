@@ -7,20 +7,28 @@ import type { ReactElement } from "react";
 import { memo } from "react";
 
 // Redux
-import { useGetAllCharactersQuery } from "state/services";
+import { API } from "state/services";
+import store from "state";
 
-const Home: NextPage = (): ReactElement => {
-  const { data, error, isLoading } = useGetAllCharactersQuery("");
+// Components
+import { Episodes } from "components";
+
+const Home: NextPage = (props: any): ReactElement => {
+  console.log(props.data);
 
   return (
-    <h1>Welcome</h1>
+    <Episodes />
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale = "en" }) => {
+  const response = await store.dispatch(API.endpoints.getAllCharacters.initiate(""));
+  const { data } = response;
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      data
     }
   }
 };
