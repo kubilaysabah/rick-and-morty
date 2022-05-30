@@ -13,7 +13,7 @@ import store from "state";
 import { Episodes } from "components";
 
 type HomeProps = {
-  episodes: Response<IEpisode[]>
+  episodes: Response<IEpisode[]> | null;
 }
 
 const Home: NextPage<HomeProps> = ({
@@ -21,7 +21,7 @@ const Home: NextPage<HomeProps> = ({
 }: HomeProps): ReactElement<HomeProps> => {
   return (
     <div className="container">
-      <Episodes {...episodes} />
+      {episodes && <Episodes {...episodes} />}
     </div>
   )
 }
@@ -31,12 +31,13 @@ export const getServerSideProps: GetServerSideProps = async ({ locale = "en" }) 
     count: 20,
     page: 1
   }));
-  const { data: episodes } = response;
+
+  const { data } = response;
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      episodes
+      episodes: data || null
     }
   }
 };

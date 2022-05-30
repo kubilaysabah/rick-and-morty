@@ -13,7 +13,7 @@ import store from "state";
 import { Character } from "components";
 
 type EpisodeDetailProps = {
-    character: ICharacter
+    character: ICharacter | null
 }
 
 const CharacterDetail: NextPage<EpisodeDetailProps> = ({
@@ -21,19 +21,19 @@ const CharacterDetail: NextPage<EpisodeDetailProps> = ({
 }: EpisodeDetailProps): ReactElement<EpisodeDetailProps> => {
     return (
         <div className="container">
-            <Character {...character} />
+            {character && <Character {...character} />}
         </div>
     )
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale = "en", query }) => {
     const response = await store.dispatch(API.endpoints.getCharacterById.initiate(query.id as string));
-    const { data: character } = response;
+    const { data } = response;
 
     return {
         props: {
             ...(await serverSideTranslations(locale, ["common"])),
-            character
+            character: data || null
         }
     }
 };
