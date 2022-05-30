@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="content"
+>
+  <div>
+    <div
+      className="contentContainer"
+    >
+      <div
+        className="imageColumn"
+      >
+        <img
+          alt="Rick Sanchez"
+          className="image"
+          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        />
+      </div>
+      <div
+        className="contentColumn"
+      >
+        <div>
+          <h1
+            className="title"
+          >
+            Rick Sanchez
+          </h1>
+          <div
+            className="statusContainer"
+          >
+            <div
+              className="statusAlive"
+            />
+            <div
+              className="statusText"
+            >
+              Alive
+            </div>
+          </div>
+          <small>
+            Citadel of Ricks
+             - 
+            Human
+             - 
+            Human
+             - 
+            Male
+          </small>
+        </div>
+        <button
+          className="turnBackButton"
+          onClick={[Function]}
+        >
+          Geri Dön
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

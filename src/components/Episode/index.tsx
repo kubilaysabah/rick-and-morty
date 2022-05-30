@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 // React
 import type { FC, ReactElement } from "react";
-import { memo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Style
 import Style from "./style.module.css";
@@ -51,4 +51,4 @@ const Episode: FC<IEpisode> = ({
 };
 
 
-export default memo(Episode);
+export default Episode;

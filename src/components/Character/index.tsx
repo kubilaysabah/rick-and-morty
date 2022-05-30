@@ -1,11 +1,10 @@
 // Next
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 // React
 import type { FC, ReactElement } from "react";
-import { memo } from "react";
 
+// Style
 import Style from "./style.module.css";
 
 const Character: FC<ICharacter> = ({
@@ -22,7 +21,7 @@ const Character: FC<ICharacter> = ({
     type,
     url,
 }: ICharacter): ReactElement<ICharacter> => {
-    const { back } = useRouter();
+    const router = useRouter();
 
     return (
         <div className={Style.content}>
@@ -38,9 +37,9 @@ const Character: FC<ICharacter> = ({
                                 <div className={`${status === "Alive" ? Style.statusAlive : status === "Dead" ? Style.statusDead : Style.statusUnknown}`} />
                                 <div className={Style.statusText}>{status}</div>
                             </div>
-                            <small>{location.name}</small>
+                            <small>{location.name} - {type} - {species} - {gender}</small>
                         </div>
-                        <button className={Style.turnBackButton} onClick={back}>Geri Dön</button>
+                        <button className={Style.turnBackButton} onClick={() => router.back()}>Geri Dön</button>
                     </div>
                 </div>
             </div>
@@ -49,4 +48,4 @@ const Character: FC<ICharacter> = ({
 };
 
 
-export default memo(Character);
+export default Character;

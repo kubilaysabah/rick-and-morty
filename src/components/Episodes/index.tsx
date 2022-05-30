@@ -1,10 +1,9 @@
 // Next
 import Link from "next/link";
 
-
 // React
 import type { FC, ReactElement } from "react";
-import { memo, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uid } from "uuid";
 
 // Style
@@ -104,4 +103,4 @@ const Episodes: FC<Response<IEpisode[]>> = (props: Response<IEpisode[]>): ReactE
 };
 
 
-export default memo(Episodes);
+export default Episodes;

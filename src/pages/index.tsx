@@ -4,7 +4,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // React
 import type { ReactElement } from "react";
-import { memo } from "react";
 
 // Redux
 import { API } from "state/services";
@@ -42,4 +41,4 @@ export const getServerSideProps: GetServerSideProps = async ({ locale = "en" }) 
   }
 };
 
-export default memo(Home);
+export default Home;

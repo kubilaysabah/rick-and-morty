@@ -3,7 +3,6 @@ import Link from "next/link";
 
 // React
 import type { FC, ReactElement } from "react";
-import { memo } from "react";
 import { v4 as uid } from "uuid";
 
 // Style
@@ -50,4 +49,4 @@ const Characters: FC<CharactersProps> = ({
 };
 
 
-export default memo(Characters);
+export default Characters;
